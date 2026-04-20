@@ -1,0 +1,17 @@
+name: Requirements Check
+on:
+  pull_request:
+    branches: [integration]
+jobs:
+  lint:
+    name: Lint Check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.x'
+          cache: 'npm'
+      - run: npm ci
+      - run: npm run lint
+      - run: npx prettier --check "src/**/*.ts"
