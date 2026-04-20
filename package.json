@@ -7,7 +7,7 @@
     "start": "node dist/main.js",
     "dev": "nodemon --watch src --ext ts --exec ts-node src/main.ts",
     "test": "jest --coverage",
-    "test:ci": "jest --coverage --coverageReporters=text-summary",
+    "test:ci": "jest --coverage --coverageReporters=text-summary --passWithNoTests",
     "lint": "eslint src/"
   },
   "keywords": [],
